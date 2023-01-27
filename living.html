@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>HOME AUTOMATION</title>
+      <link rel="icon" type="image/x-icon" href="./Logo1.0.3.ico">
+    <style>
+      html {
+        font-size: 10px;
+      }
+        a:link, a:visited {
+          background-color: BLUE;
+          color: rgb(4, 248, 16);
+          padding: 14px 25px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        
+        a:hover, a:active {
+          background-color: hwb(0 11% 11%)
+        }
+        :root{
+          --1st-color: white;
+          --2-color: black;
+        }
+        .drk-theme{
+          --1st-color: black;
+          --2-color: white;
+        }
+        .container1 {
+          display: grid;
+          grid-template-columns: 30% 30% 30%;
+          justify-content: center;
+          align-content: center;
+          gap: 1rem;
+          margin: 0 auto;
+          max-width: 95%;
+          max-height: 20%;
+          background-color: burlywood;
+
+        }
+        .container2 {
+          display: grid;
+          grid-template-columns: 30% 30% 30%;
+          justify-content: center;
+          align-content: center;
+          gap: 1rem;
+          margin: 0 auto;
+          max-width: 95%;
+          max-height: 20%;
+          background-color: rgb(247, 82, 21);
+
+        }
+        .container3 {
+          display: grid;
+          grid-template-columns: 30% 30% 30%;
+          justify-content: center;
+          align-content: center;
+          gap: 1rem;
+          margin: 0 auto;
+          max-width: 95%;
+          max-height: 20%;
+          background-color: rgb(38, 245, 45);
+
+        }
+        .container4 {
+          display: grid;
+          grid-template-columns: 30% 30% 30%;
+          justify-content: center;
+          align-content: center;
+          gap: 1rem;
+          margin: 0 auto;
+          max-width: 95%;
+          max-height: 20%;
+          background-color: rgb(234, 14, 135);
+
+        }
+        h2 {
+        text-align: center;
+        color:var(--2-color);
+        }
+        h1 {
+        text-align: center;
+        color:var(--2-color);
+        }
+        p {
+        text-align: center;
+        color:var(--2-color);
+        }
+        BODY {
+          background-color: var(--1st-color);
+
+        }
+        #dark{
+          width: 10px;
+          cursor: pointer;
+          text-align: right;
+        }
+        </style>
+</head>
+<body>
+    <header>
+      <H1> HOME AUTOMATION</H1>
+    </header> 
+    <HR>
+    <h2>Living Room</h2> <IMg src="owner.jpg" id="dark"></IMg>
+    <p>D1 SWITCH CONTROLL:</p>
+      <div class="container1">
+        <a href="https://blynk.cloud/external/api/update?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v0=0" target="_blank">OFF</a>
+        <a href="https://blynk.cloud/external/api/update?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v0=1" target="_blank">ON</a>
+        <a href="https://blynk.cloud/external/api/get?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v0" target="_blank">STATUS</a>
+      </div>
+
+      <p>D2 SWITCH CONTROLL</p>
+      <div class="container2">
+        
+        <a href="https://blynk.cloud/external/api/update?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v1=0" target="_blank">OFF</a>
+       <a href="https://blynk.cloud/external/api/update?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v1=1" target="_blank">ON</a>
+       <a href="https://blynk.cloud/external/api/get?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v1" target="_blank">STATUS</a>
+     </div>
+     <p>D5 SWITCH CONTROLL</p>
+      <div class="container3">
+       
+        <a href="https://blynk.cloud/external/api/update?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v2=0" target="_blank">OFF</a>
+        <a href="https://blynk.cloud/external/api/update?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v2=1" target="_blank">ON</a>
+        <a href="https://blynk.cloud/external/api/get?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v2" target="_blank">STATUS</a>
+      </div>
+      <p>D6 SWITCH CONTROLL</p>
+      <div class="container4">
+        
+        <a href="https://blynk.cloud/external/api/update?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v0=0" target="_blank">OFF</a>
+        <a href="https://blynk.cloud/external/api/update?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v3=1" target="_blank">ON</a>
+        <a href="https://blynk.cloud/external/api/get?token=TH-ndM-Jj-ToLLxdN_FTOm_Z2--jdyAG&v3" target="_blank">STATUS</a>
+      </div>
+  <hr>
+ <footer>
+  <a href="mailto:jitendrasahu5194@gamil.com" target="_blank" >contact us</a>
+
+  <a href="tel:+918319320630" target="_blank" >phone</a>
+ </footer>
+ <script>
+    var dark = document.getElementById("dark");
+    dark.onclick = function(){
+      document.body.classList.toggle("drk-theme");
+    }
+ </script>
+</body>
+</html>
