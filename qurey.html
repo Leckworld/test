@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="robots" content="noindex, nofollow">
+      <title>Google Sheet Submit</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <form method="post" id="google-sheet">
+         <label>
+            <p class="label-txt">ENTER YOUR NAME</p>
+            <input type="text" class="input" name="name" required>
+            <div class="line-box">
+               <div class="line"></div>
+            </div>
+         </label>
+        
+         <label>
+            <p class="label-txt">ENTER your moblie number</p>
+            <input type="number" class="input" name="number" required>
+            <div class="line-box">
+               <div class="line"></div>
+            </div>
+         </label>
+        
+         <label>
+            <p class="label-txt">ENTER YOUR EMAIL</p>
+            <input type="email" class="input" name="email" required>
+            <div class="line-box">
+               <div class="line"></div>
+            </div>
+         </label>
+
+         <label>
+            <p class="label-txt">Remark</p>
+            <input type="text" class="input" name="data" required>
+            <div class="line-box">
+               <div class="line"></div>
+            </div>
+         </label>
+
+         <button type="submit" id="btnSubmit">Submit</button name="submit">
+		 <div id="msg"></div>
+      </form>
+      <script>
+         const scriptURL = 'https://script.google.com/macros/s/AKfycbxy8AQpzYNYwZoHvy8RcSTMF9AbSKQLx48M9OeGAm5hiINmgcCbsL6J9fELD5CYujjwTQ/exec'
+         const form = document.forms['google-sheet']
+       
+         form.addEventListener('submit', e => {
+           e.preventDefault()
+           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+             .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+             .catch(error => console.error('Error!', error.message))
+         })
+       </script>
+
+   </body>
+</html>
