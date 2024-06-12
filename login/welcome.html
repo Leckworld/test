@@ -18,8 +18,36 @@
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
     ></script>
+  <link rel="stylesheet" href="122.css">
+  <script src="123.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="switch">
+    <label class="container">
+      <input class="l" type="checkbox" onclick="toggleButton(this)" id="light"> light
+      <span class="slider round"></span>
+      <hr>
+    </label>
+    <div class="container" id="dim">
+      <input class="l" type="checkbox" onclick="toggleButton1(this)" id="f_light">foot light
+      <span class="slider round1"></span>
+    </div>
+    <hr>
+    </label>
+    <div class="container" id="dim">
+      <input class="l" type="checkbox" onclick="toggleButton2(this)" id="fan">fan
+      <span class="slider round1"></span>
+    </div>
+    <hr>
+    </label>
+    <div class="container" id="dim">
+      <input class="l" type="checkbox" onclick="toggleButton3(this)" id="extra">extra
+      <span class="slider round1"></span>
+    </div>
+  </div>
+  <hr>
+
+
     <center><div style="margin:100px">
         <span id="user" class="message">Hello, < email-id ></Email-id></span>
         <div class="success"><span>Welcome to auth starter, You are successfully loged in!!!</span></div><br/>
