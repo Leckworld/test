@@ -17,7 +17,7 @@ const colorInput = document.getElementById('color-picker');
 
 
 function toggleButton(light) {
-    var pinValue0 = light.checked ? 1 : 0;
+    var pinValue0 = light.checked ? 0 : 1;
     var url0 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v0=" + pinValue0;
     var request = new XMLHttpRequest();
     request.open("GET", url0);
@@ -27,7 +27,7 @@ function toggleButton(light) {
 // f_light swicth function
 
 function toggleButton1(f_light) {
-  var pinValue1 = f_light.checked ? 1 : 0;
+  var pinValue1 = f_light.checked ? 0 : 1;
   var url1 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v1=" + pinValue1;
   var request = new XMLHttpRequest();
   request.open("GET", url1);
@@ -36,7 +36,7 @@ function toggleButton1(f_light) {
 };
 
 function toggleButton2(fan) {
-  var pinValue2 = fan.checked ? 1 : 0;
+  var pinValue2 = fan.checked ? 0 : 1;
   var url2 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v2=" + pinValue2;
   var request = new XMLHttpRequest();
   request.open("GET", url2);
@@ -46,7 +46,7 @@ function toggleButton2(fan) {
 };
 
 function toggleButton3(extra) {
-  var pinValue3 = extra.checked ? 1 : 0;
+  var pinValue3 = extra.checked ? 0 : 1;
   var url3 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v3=" + pinValue3;
   var request = new XMLHttpRequest();
   request.open("GET", url3);
