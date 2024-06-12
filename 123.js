@@ -17,7 +17,7 @@ const colorInput = document.getElementById('color-picker');
 
 
 function toggleButton(light) {
-    var pinValue0 = light.checked ? 0 : 1;
+    var pinValue0 = light.checked ? 1 : 0;
     var url0 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v0=" + pinValue0;
     var request = new XMLHttpRequest();
     request.open("GET", url0);
