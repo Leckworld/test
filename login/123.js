@@ -1,4 +1,7 @@
-const apiUrl = "https://blynk.cloud/external/api/get?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&";
+const bUrl = "https://blynk.cloud/external/api/";
+const apikey = "MSXaYilPABXsmhXA4EDwO4JStHxUj1P5";
+const apiGet = bUrl +"get?token="+apikey+"&";
+const apiUpdate = bUrl +"update?token="+apikey+"&"
 const PORT0 = "v0";
 const PORT1 = "v1";
 const PORT2 = "v2";
@@ -17,8 +20,8 @@ const colorInput = document.getElementById('color-picker');
 
 
 function toggleButton(light) {
-    var pinValue0 = light.checked ? 1 : 0;
-    var url0 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v0=" + pinValue0;
+    var pinValue0 = light.checked ? 0 : 1;
+    var url0 = apiUpdate + PORT0 +"="+ pinValue0;
     var request = new XMLHttpRequest();
     request.open("GET", url0);
     request.send();
@@ -27,8 +30,8 @@ function toggleButton(light) {
 // f_light swicth function
 
 function toggleButton1(f_light) {
-  var pinValue1 = f_light.checked ? 1 : 0;
-  var url1 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v1=" + pinValue1;
+  var pinValue1 = f_light.checked ? 0 : 1;
+  var url1 = apiUpdate + PORT1 +"="+ pinValue1;
   var request = new XMLHttpRequest();
   request.open("GET", url1);
   request.send();
@@ -36,8 +39,8 @@ function toggleButton1(f_light) {
 };
 
 function toggleButton2(fan) {
-  var pinValue2 = fan.checked ? 1 : 0;
-  var url2 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v2=" + pinValue2;
+  var pinValue2 = fan.checked ? 0 : 1;
+  var url2 = apiUpdate + PORT2 +"="+ pinValue2;
   var request = new XMLHttpRequest();
   request.open("GET", url2);
   request.send();
@@ -46,8 +49,8 @@ function toggleButton2(fan) {
 };
 
 function toggleButton3(extra) {
-  var pinValue3 = extra.checked ? 1 : 0;
-  var url3 = "https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v3=" + pinValue3;
+  var pinValue3 = extra.checked ? 0 : 1;
+  var url3 = apiUpdate + PORT3 +"="+ pinValue3;
   var request = new XMLHttpRequest();
   request.open("GET", url3);
   request.send();
@@ -58,17 +61,17 @@ function updateSliderValue() {
   var slider_R = document.getElementById("slider_R");
   var svr = slider_R.value;
   var request = new XMLHttpRequest();
-  request.open("GET","https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v4="+svr );
+  request.open("GET",apiUpdate + PORT4 +"="+svr );
   request.send();
   var slider_G = document.getElementById("slider_G");
   var svg = slider_G.value;
   var request = new XMLHttpRequest();
-  request.open("GET","https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v5="+svg );
+  request.open("GET",apiUpdate + PORT5 +"="+svg );
   request.send();
   var slider_B = document.getElementById("slider_B");
   var svb = slider_B.value;
   var request = new XMLHttpRequest();
-  request.open("GET","https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v6="+svb );
+  request.open("GET",apiUpdate + PORT6 +"="+ svb );
   request.send();
 
   console.log(svr); 
@@ -85,38 +88,37 @@ function updateSliderValue() {
 }
 
 async function getApiResponse() {
-const response0 = await fetch(apiUrl+PORT0);
+const response0 = await fetch(apiGet+PORT0);
 const data0 = await response0.json();
 
-
-const response1 = await fetch(apiUrl+PORT1);
+const response1 = await fetch(apiGet+PORT1);
 const data1 = await response1.json();
 
-const response2 = await fetch(apiUrl+PORT2);
+const response2 = await fetch(apiGet+PORT2);
 const data2 = await response2.json();
 
-const response3 = await fetch(apiUrl+PORT3);
+const response3 = await fetch(apiGet+PORT3);
 const data3 = await response3.json();
 
-const response4 = await fetch(apiUrl+PORT4);
+const response4 = await fetch(apiGet+PORT4);
 const data4 = await response4.json();
 
-const response5 = await fetch(apiUrl+PORT5);
+const response5 = await fetch(apiGet+PORT5);
 const data5 = await response5.json();
 
-const response6 = await fetch(apiUrl+PORT6);
+const response6 = await fetch(apiGet+PORT6);
 const data6 = await response6.json();
 
 
 // Update the page with the response data
-if (data0 == 0)
+if (data0 == 1)
   {
     // document.getElementById("response-container").innerHTML = "OFF"
     document.getElementById("light");
     light.checked = false;
     console.log("v0"+ data0)
   };
-if (data0 == 1)
+if (data0 == 0)
   {
     // document.getElementById("response-container").innerHTML = "ON"
     document.getElementById("light");
@@ -124,14 +126,14 @@ if (data0 == 1)
     console.log("v0"+ data0)
   };
 
-  if (data1 == 0)
+  if (data1 == 1)
   {
     // document.getElementById("response-container").innerHTML = "OFF"
     document.getElementById("light");
     f_light.checked = false;
     console.log("v1" + data1)
   };
-if (data1 == 1)
+if (data1 == 0)
   {
     // document.getElementById("response-container").innerHTML = "ON"
     document.getElementById("light");
@@ -140,14 +142,14 @@ if (data1 == 1)
   };
 //document.getElementById("response-container").innerHTML = JSON.stringify(data);
 
-if (data2 == 0)
+if (data2 == 1)
   {
     // document.getElementById("response-container").innerHTML = "OFF"
     document.getElementById("light");
     fan.checked = false;
     console.log("v2" + data2)
   };
-if (data2 == 1)
+if (data2 == 0)
   {
     // document.getElementById("response-container").innerHTML = "ON"
     document.getElementById("light");
@@ -155,14 +157,14 @@ if (data2 == 1)
     console.log("v2" + data2)
   };
 
-if (data3 == 0)
+if (data3 == 1)
   {
     // document.getElementById("response-container").innerHTML = "OFF"
     document.getElementById("light");
     extra.checked = false;
     console.log("v3" + data3)
   };
-if (data3 == 1)
+if (data3 == 0)
   {
     // document.getElementById("response-container").innerHTML = "ON"
     document.getElementById("light");
@@ -215,15 +217,15 @@ var b = parseInt(hex.substring(4, 6), 16);
 
 //   REQUEST
 var request = new XMLHttpRequest();
-request.open("GET","https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v4="+ r );
+request.open("GET",apiUpdate + PORT4 +"="+ r );
 request.send();
 console.log("R" + r);
 var request = new XMLHttpRequest();
-request.open("GET","https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v5="+ g );
+request.open("GET",apiUpdate + PORT5 +"="+ g );
 request.send();
 console.log("G" + g);
 var request = new XMLHttpRequest();
-request.open("GET","https://blynk.cloud/external/api/update?token=MSXaYilPABXsmhXA4EDwO4JStHxUj1P5&v6="+ b );
+request.open("GET",apiUpdate + PORT6 +"="+ b );
 request.send();
 console.log("B" + b);
 }
