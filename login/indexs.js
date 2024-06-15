@@ -20,17 +20,17 @@ function login(){
  function signUp(){
      const email = document.getElementById("email").value
      const password = document.getElementById("password").value
-     const device_id  = document.getElementById("Device_Code").value
-     firebase.auth().createUserWithEmailAndPassword(email, password)
-     .catch((error) => {
-         document.getElementById("error").innerHTML = error.message
-     });
+     const device_id  = document.getElementById("device_id").value
      database.ref('users/'+ email).set({
         email:email,
         password : password,
         device_id : device_id
      })
      alert(email+" account is created")
+     firebase.auth().createUserWithEmailAndPassword(email, password)
+     .catch((error) => {
+         document.getElementById("error").innerHTML = error.message
+     });
 
 
  }
