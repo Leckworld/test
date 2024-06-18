@@ -172,11 +172,11 @@ if (data3 == 0)
     console.log("v3" + data3)
   };
 
-if (data4 == 1)
+if (data4 == 0)
   {
     document.getElementById("stat").innerHTML = "Youer device is _OFFLINE_"
   };
-if (data4 == 0)
+if (data4 == 1)
   {
     document.getElementById("stat").innerHTML = "Youer device is _ONLINE_"
   };
