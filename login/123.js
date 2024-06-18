@@ -171,6 +171,15 @@ if (data3 == 0)
     extra.checked = true;
     console.log("v3" + data3)
   };
+
+if (data4 == 1)
+  {
+    document.getElementById("stat").innerHTML = "Youer device is _OFFLINE_"
+  };
+if (data4 == 0)
+  {
+    document.getElementById("stat").innerHTML = "Youer device is _ONLINE_"
+  };
   document.getElementById("slider_R");
     slider_R.value = data4;
     console.log("v4" + data4);
