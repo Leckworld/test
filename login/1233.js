@@ -1,23 +1,7 @@
 const bUrl = "https://blynk.cloud/external/api/";
-function update(){
-    window.user = firebase.auth().currentUser;
-    window.database = firebase.database();
-    window.dname =user.displayName
-    window.email =user.email
-    window.uname = email.split('@')[0].replace(/\./g, '');
-    window.mnumber =user.phoneNumber
-    window.uid =user.uid
-
-    var user_ref = database.ref('users/' + uname)
-    user_ref.on('value', function(snapshot) {
-      var data = snapshot.val()
-      window.apikey = data.say_something
-   
-    })  
-}
-setTimeout(update,2000);
-const apiGet = bUrl +"get?token="+apikey+"&";
-const apiUpdate = bUrl +"update?token="+apikey+"&"
+var apikey = ""
+var apiGet = bUrl +"get?token="+apikey+"&";
+var apiUpdate = bUrl +"update?token="+apikey+"&"
 const PORT0 = "v0";
 const PORT1 = "v1";
 const PORT2 = "v2";
@@ -254,6 +238,28 @@ request.open("GET",apiUpdate + PORT6 +"="+ b );
 request.send();
 console.log("B" + b);
 }
+
+function update(){
+    window.user = firebase.auth().currentUser;
+    window.database = firebase.database();
+    window.dname =user.displayName
+    window.email =user.email
+    window.uname = email.split('@')[0].replace(/\./g, '');
+    window.mnumber =user.phoneNumber
+    window.uid =user.uid
+
+    var user_ref = database.ref('users/' + uname)
+    user_ref.on('value', function(snapshot) {
+      var data = snapshot.val()
+      window.apikey = data.say_something
+      window.apiGet = bUrl +"get?token="+apikey+"&";
+      window.apiUpdate = bUrl +"update?token="+apikey+"&"
+    
+    
+   
+    })  
+}
+setTimeout(update,2000);
 
 
 setInterval(getApiResponse, 500); // Call the function every second 1000 mili sec =  1s
