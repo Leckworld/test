@@ -255,11 +255,11 @@ function update(){
       window.apiGet = bUrl +"get?token="+apikey+"&";
       window.apiUpdate = bUrl +"update?token="+apikey+"&"
     
-    
+    setInterval(getApiResponse, 500);
    
     })  
 }
 setTimeout(update,2000);
 
 
-setInterval(getApiResponse, 500); // Call the function every second 1000 mili sec =  1s
+ // Call the function every second 1000 mili sec =  1s
