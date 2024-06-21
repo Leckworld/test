@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+    <link rel="stylesheet" href="122.css">
+    <script src="1233.js" crossorigin="anonymous"></script>
+    <style>
+        .profile-picture {
+            width: 150px; /* Desired width */
+            height: 150px; /* Desired height */
+            border-radius: 50%; /* Makes the picture round */
+            object-fit: cover; /* Ensures the image covers the entire area */
+            border: 2px solid #343a40; /* Optional border for better visibility */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #eb7508;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+        .topbar {
+            height: 50px;
+            background-color: #343a40;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .topbar .menu {
+            position: relative;
+            display: inline-block;
+        }
+        .topbar .menu-button {
+            background-color: #343a40;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .topbar .menu-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .topbar .menu-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .topbar .menu-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .switch {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .floating-menu {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .floating-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .floating-menu a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h5>LECKWORLD</h5>
+        <a href="https://leckworld.github.io/test.github.io/">Home</a>
+        <a href="#devices">Add_New</a>
+        <div class="profile-container">
+            <img  alt="Profile Picture" class="profile-picture" id="profile">
+        </div>
+        <a href="#logout" onclick="logout()">Logout</a>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div style="flex: 1; display: flex; flex-direction: column;">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div id="device">Welcome to your Dashboard</div>
+            <div class="menu">
+                <button class="menu-button" onclick="toggleMenu()">☰</button>
+                <div class="menu-content" id="dropdownMenu">
+                    <a onclick="deviceSelect('device_1')" id="device1">Device_1</a>
+                    <a onclick="deviceSelect('device_2')" id="device2">Device_2</a>
+                    <a onclick="deviceSelect('device_3')" id="device3">Device_3</a>
+                    <a onclick="deviceSelect('device_4')" id="device4">Device_4</a>
+                    <a onclick="deviceSelect('device_5')" id="device5">Device_5</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="container">
+                <span id="user"><h6>Hello! <email-id></email-id></h6></span>
+                <div class="success"><span>Welcome to auth starter, You are successfully logged in!!!</span></div>
+                <div id="stat">
+                    <h4><span>please select Device!!!</span></h4>
+                </div>
+            </div>
+            <div class="container switch">
+                <label >
+                    <input class="l" type="checkbox" onclick="toggleButton(this)" id="light"><span id="pin1">Light</span>
+                    <span class="slider round"></span>
+                </label>
+                <label>
+                    <input class="l" type="checkbox" onclick="toggleButton1(this)" id="f_light"><span id="pin2"> Foot Light</span>
+                    <span class="slider round1"></span>
+                </label>
+                <label>
+                    <input class="l" type="checkbox" onclick="toggleButton2(this)" id="fan"> <span id="pin3">Fan</span>
+                    <span class="slider round1"></span>
+                </label>
+                <label>
+                    <input class="l" type="checkbox" onclick="toggleButton3(this)" id="extra"> <span id="pin4">Extra</span>
+                    <span class="slider round1"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <button class="floating-button" onclick="toggleFloatingMenu()">+</button>
+    <div class="floating-menu" id="floatingMenu">
+        <a href="#">Option 1</a>
+        <a href="#">Option 2</a>
+        <a href="#">Option 3</a>
+    </div>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="firebase.js"></script>
+    <script src="welcome.js"></script>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+        function toggleFloatingMenu() {
+            var menu = document.getElementById("floatingMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                var dropdowns = document.getElementsByClassName("menu-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === "block") {
+                        openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
