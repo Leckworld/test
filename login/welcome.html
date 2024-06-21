@@ -14,9 +14,16 @@
 </head>
 <body>
     <!-- Main Content -->
-
-
-   <br/><br/><br/><br/><br/> 
+    <center>
+        <div style="margin:100px">
+            <span id="user" class="message">Hello, <email-id></email-id></span>
+            <div class="success"><span>Welcome to auth starter, You are successfully logged in!!!</span></div><br/>
+            <div id="stat"><h3><span></span></h3></div><br/>
+            <button class="btn btn-danger" onclick="logout()">Logout</button>
+        </div>
+    </center>
+    <hr>
+    <br/>
     <div class="switch">
         <label class="container">
             <input class="l" type="checkbox" onclick="toggleButton(this)" id="light"> Light
@@ -39,14 +46,7 @@
         </div>
     </div>
     <hr>
-    <center>
-        <div style="margin:100px">
-            <span id="user" class="message">Hello, <email-id></email-id></span>
-            <div class="success"><span>Welcome to auth starter, You are successfully logged in!!!</span></div><br/>
-            <div id="stat"><h3><span></span></h3></div><br/>
-            <button class="btn btn-danger" onclick="logout()">Logout</button>
-        </div>
-    </center>
+    
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
