@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 body{
-    background: #F8F8F8;
+    background: #392222;
 }
 
 *, *::before, *::after{
     box-sizing: border-box;
+
 }
 
 .custom-field{
@@ -12,6 +13,7 @@ body{
     font-size: 14px;
     padding-top: 20px;
     margin-top: 5px;
+    
 }
 
 .custom-field input{
@@ -19,7 +21,7 @@ body{
     width: 300px;
     font-size: 14px;
     border-radius: 3px;
-    border: 1.5px solid gray;
+    border: 1.5px solid rgb(8, 8, 8);
     outline-color: deepskyblue;
 }
 
@@ -28,7 +30,7 @@ body{
     left: 12px;
     top: calc(50% + 10px);
     transform: translateY(-50%);
-    color: #aaa;
+    color: #000367;
     transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
 }
 
@@ -36,15 +38,15 @@ body{
 .custom-field input:focus + .placeholder{
     top: 21px;
     font-size: 10px;
-    color: #222;
+    color: #ff0000;
     padding: 5px;
-    background: white;
+    background: rgb(255, 255, 255);
 }
 
 .message{
     font-size: 70px;
     font-family: 'Ubuntu', sans-serif;
-    color: steelblue;
+    color: rgb(42, 121, 185);
 }
 
 .success{
